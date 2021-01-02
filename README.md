@@ -43,7 +43,7 @@ Read Power production data file using Pandas </br>
 <code>  df_power = pd.read_csv('powerproduction.txt') </code> <br/>
 
 This line reads the contents of the flat file into a pandas dataframe. The first few rows of the dataset is shown in the table below. <br/>
-<img src="dataframe-head.PNG" alt="Dataset Power production" width="25%" height="25%" ><br/> 
+<img src="dataframe-head.png" alt="Dataset Power production" width="25%" height="25%" ><br/> 
 
 The aim of this project is to develop a model that can predict power production given a wind speed. 
 
@@ -90,11 +90,11 @@ The model intercept gave the constant <br/>
 Therefore the linear relationship found between power and speed using sklearn was given by the formula <br/>
 <code> power = 4.92 x speed - 13.90 </code>
 
-This was the exact same relationship found using Numpy ployfit function. This is not surprising since both functions the coefficents of the linear model by minimising the residual sum of squares. <br/>
+This was the exact same relationship found using Numpy ployfit function. This is not surprising since both functions find the coefficents of the linear model by minimising the residual sum of squares. <br/>
 
-The <code> model.score(x,y) </code> showed the R-square of the model is 0.73 which is reasonably high R-square value. However Linear Regression assumes a linear relationhip between the target (y) and predictor (x) variable. The chart clearly shows this holds true only for Speed values between roughly 7 and 21. <br/>
+The <code> model.score(x,y) </code> showed the R-square of the model is 0.73 which is reasonably high R-square value. However Linear Regression assumes a linear relationhip between the target (y) and predictor (x) variable. The chart below clearly shows this holds true only for Speed values between roughly 7 and 21. <br/>
 
-For example, using the formula for linear regression implies when the speed is Zero power production is -13.90. This is clearly wrong since power production is bound 0 (min value). <br/>
+For example, using the formula for linear regression implies when the speed is Zero power production is -13.90. This is obviously wrong since power production is zero bound (minimum value). <br/>
 <img src="Linear Model Scikit Learn.png" alt="Linear Model Scikit Learn plot" width="50%"><br/>  
 
 To illustrate the non-linear relationhip between speed and power, I plotted the actual power production against the predicted power production values. This scattor plot clearly demonstrated the model prediction is not reliable for predicted pwoer values less than 20 or predicted power values more than 90. This is because the linear relationship speed and power breaksdown when the speed is less than 7 or speed is over 21.<br/>
@@ -110,7 +110,7 @@ The coefficents of <code> coeffs = np.polyfit(x, y, 3) </code> suggested the rel
 <code> Power = -0.05 Speed<sup> 3 </sup> + 1.89 Speed<sup> 2 </sup> - 12.94 Speed + 19.20 </code> <br/>
 
 The chart below shows the third degree polynomial function and the data. <br/>
-<img src="3rddegreeplotfit.PNG" alt="£rd degree plotfit" width="50%"><br/>
+<img src="3rddegreeplotfit.png" alt="£rd degree plotfit" width="50%"><br/>
 
 The prediction of this 3rd degree ployfit produces a  slightly better fit than the (first degree) linear regression. This is clear from the scatter plot of actual vs predicted values shown in the chart below. <br/>
 <img src="3rd Degree polynomial_Predicted vs Actual Values.png" alt="Third Degree polynomial : Predicted vs Actual Values" width="50%"><br/>
