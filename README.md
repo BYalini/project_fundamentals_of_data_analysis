@@ -43,7 +43,7 @@ Read Power production data file using Pandas </br>
 <code>  df_power = pd.read_csv('powerproduction.txt') </code> <br/>
 
 This line reads the contents of the flat file into a pandas dataframe. The first few rows of the dataset is shown in the table below. <br/>
-<img src="dataframe-head.png" alt="Dataset Power production" width="25%" height="25%" ><br/> 
+<img src="dataframehead.png" alt="Dataset Power production" width="25%" height="25%" ><br/> 
 
 The aim of this project is to develop a model that can predict power production given a wind speed. 
 
